@@ -1,0 +1,18 @@
+# Binaries
+/bin/
+/server
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Environment
+.env
+.env.*
+
+# Superpowers (local design/plan docs)
+docs/superpowers/

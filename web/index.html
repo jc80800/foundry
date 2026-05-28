@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plant an idea — Foundry</title>
+    <link rel="icon" type="image/png" href="/img/koi-mark.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700&family=Outfit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="/">
+          <img class="brand-mark" src="/img/koi-mark.png" alt="" width="40" height="40" />
+          <span class="brand-text">
+            <span class="brand-title">Foundry</span>
+            <span class="brand-subtitle">where ideas take root</span>
+          </span>
+        </a>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="/" aria-current="page">Submit idea</a>
+            <a href="/ideas.html">Browse ideas</a>
+          </nav>
+          <a class="back-link" href="https://gatewoodlab.com">← <span>Gatewood Lab</span></a>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="intro">
+        <div class="intro-inner">
+          <div class="intro-copy">
+            <p class="intro-eyebrow">Specimen intake · 001</p>
+            <h1>Plant an idea</h1>
+            <p class="intro-lead">
+              Share what you&rsquo;d build, how you&rsquo;d ship an MVP, and what&rsquo;s in the way.
+            </p>
+            <img
+              class="intro-watermark intro-watermark--inline"
+              src="/img/calligraphy-watermark.png"
+              alt=""
+              width="796"
+              height="323"
+            />
+          </div>
+          <div class="intro-mascot" aria-hidden="true">
+            <img
+              class="intro-koi"
+              src="/img/koi-accent.png"
+              alt=""
+              width="512"
+              height="512"
+            />
+          </div>
+        </div>
+      </section>
+      <nav class="step-strip" aria-label="Form progress">
+        <p class="step-strip__label" id="stepProgressLabel">Step 1 of 6</p>
+        <div class="step-strip__track">
+        <a href="#tray-type"><span class="step-link-label">01 · Type</span><span class="step-status status-needs" data-step-status="tray-type">Needs answer</span></a>
+        <a href="#tray-genre"><span class="step-link-label">02 · Genre</span><span class="step-status status-needs" data-step-status="tray-genre">Needs answer</span></a>
+        <a href="#tray-model"><span class="step-link-label">03 · Model</span><span class="step-status status-needs" data-step-status="tray-model">Needs answer</span></a>
+        <a href="#tray-barriers"><span class="step-link-label">04 · Blockers</span><span class="step-status status-needs" data-step-status="tray-barriers">Needs answer</span></a>
+        <a href="#tray-idea"><span class="step-link-label">05 · Idea</span><span class="step-status status-needs" data-step-status="tray-idea">Needs answer</span></a>
+        <a href="#tray-mvp"><span class="step-link-label">06 · MVP</span><span class="step-status status-needs" data-step-status="tray-mvp">Needs answer</span></a>
+        </div>
+      </nav>
+      <div class="form-layout">
+        <nav class="section-rail" aria-label="Form sections">
+          <a href="#tray-type"><span class="step-link-label">01 · Type</span><span class="step-status status-needs" data-step-status="tray-type">Needs answer</span></a>
+          <a href="#tray-genre"><span class="step-link-label">02 · Genre</span><span class="step-status status-needs" data-step-status="tray-genre">Needs answer</span></a>
+          <a href="#tray-model"><span class="step-link-label">03 · Business model</span><span class="step-status status-needs" data-step-status="tray-model">Needs answer</span></a>
+          <a href="#tray-barriers"><span class="step-link-label">04 · Blockers</span><span class="step-status status-needs" data-step-status="tray-barriers">Needs answer</span></a>
+          <a href="#tray-idea"><span class="step-link-label">05 · Idea</span><span class="step-status status-needs" data-step-status="tray-idea">Needs answer</span></a>
+          <a href="#tray-mvp"><span class="step-link-label">06 · MVP</span><span class="step-status status-needs" data-step-status="tray-mvp">Needs answer</span></a>
+        </nav>
+        <div class="form-card">
+      <form id="ideaForm" novalidate>
+        <fieldset id="tray-type" class="tray">
+          <legend><span class="tray-index">01 ·</span> Type</legend>
+          <div class="checkbox-grid checkbox-grid--compact">
+          <label class="checkbox"><input type="checkbox" name="types" value="Mobile app (iOS/Android)" /> Mobile app (iOS/Android)</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Desktop app (Windows/macOS/Linux)" /> Desktop app (Windows/macOS/Linux)</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Web app (browser)" /> Web app (browser)</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Browser extension" /> Browser extension</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="API / developer library" /> API / developer library</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="SaaS platform" /> SaaS platform</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Marketplace / platform" /> Marketplace / platform</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Hardware + software" /> Hardware + software</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Game" /> Game</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Plugin / integration" /> Plugin / integration</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="CLI tool" /> CLI tool</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Content / media product" /> Content / media product</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Community / forum" /> Community / forum</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Newsletter / publication" /> Newsletter / publication</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Physical product + digital layer" /> Physical product + digital layer</label>
+          <label class="checkbox"><input type="checkbox" name="types" value="Other" /> Other</label>
+          </div>
+          <div class="other-field" hidden>
+            <label for="typesOther">Other (describe)</label>
+            <input type="text" id="typesOther" maxlength="100" hidden />
+            <span class="char-count" data-count-for="typesOther">0 / 100</span>
+          </div>
+        </fieldset>
+        <fieldset id="tray-genre" class="tray">
+          <legend><span class="tray-index">02 ·</span> Genre</legend>
+          <div class="checkbox-grid checkbox-grid--compact checkbox-grid--dense">
+          <label class="checkbox"><input type="checkbox" name="genres" value="Education & learning" /> Education & learning</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Cooking & food" /> Cooking & food</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Finance & investing" /> Finance & investing</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Health & fitness" /> Health & fitness</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Mental health & wellness" /> Mental health & wellness</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Productivity & work" /> Productivity & work</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Parenting & family" /> Parenting & family</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Dating & relationships" /> Dating & relationships</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Travel & local" /> Travel & local</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Real estate" /> Real estate</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Legal & compliance" /> Legal & compliance</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="HR & hiring" /> HR & hiring</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Sales & CRM" /> Sales & CRM</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Marketing & growth" /> Marketing & growth</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Design & creative tools" /> Design & creative tools</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Developer tools" /> Developer tools</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Gaming & entertainment" /> Gaming & entertainment</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Music & audio" /> Music & audio</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Sports" /> Sports</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Fashion & beauty" /> Fashion & beauty</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Pets" /> Pets</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Sustainability & climate" /> Sustainability & climate</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Nonprofit & social impact" /> Nonprofit & social impact</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="B2B operations" /> B2B operations</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="E-commerce & retail" /> E-commerce & retail</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Agriculture" /> Agriculture</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Construction & trades" /> Construction & trades</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Automotive" /> Automotive</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Science & research" /> Science & research</label>
+          <label class="checkbox"><input type="checkbox" name="genres" value="Other" /> Other</label>
+          </div>
+          <div class="other-field" hidden>
+            <label for="genresOther">Other (describe)</label>
+            <input type="text" id="genresOther" maxlength="100" hidden />
+            <span class="char-count" data-count-for="genresOther">0 / 100</span>
+          </div>
+        </fieldset>
+        <fieldset id="tray-model" class="tray">
+          <legend><span class="tray-index">03 ·</span> Business model</legend>
+          <div class="checkbox-grid checkbox-grid--compact">
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Free (no direct revenue)" /> Free (no direct revenue)</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Freemium" /> Freemium</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Monthly subscription" /> Monthly subscription</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Annual subscription" /> Annual subscription</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="One-time purchase" /> One-time purchase</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Pay-per-use / usage-based" /> Pay-per-use / usage-based</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Tiered plans" /> Tiered plans</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Marketplace commission" /> Marketplace commission</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Advertising" /> Advertising</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Affiliate / referrals" /> Affiliate / referrals</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Licensing (B2B)" /> Licensing (B2B)</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Enterprise / custom contracts" /> Enterprise / custom contracts</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Donations / tips" /> Donations / tips</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Crowdfunding / preorders" /> Crowdfunding / preorders</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Data / insights (ethical B2B)" /> Data / insights (ethical B2B)</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Services + product bundle" /> Services + product bundle</label>
+          <label class="checkbox"><input type="checkbox" name="businessModels" value="Other" /> Other</label>
+          </div>
+          <div class="other-field" hidden>
+            <label for="businessModelsOther">Other (describe)</label>
+            <input type="text" id="businessModelsOther" maxlength="100" hidden />
+            <span class="char-count" data-count-for="businessModelsOther">0 / 100</span>
+          </div>
+        </fieldset>
+        <fieldset id="tray-barriers" class="tray">
+          <legend><span class="tray-index">04 ·</span> Blockers</legend>
+          <div class="checkbox-grid checkbox-grid--compact">
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Lack of technical skills" /> Lack of technical skills</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Lack of time" /> Lack of time</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Lack of funding / budget" /> Lack of funding / budget</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="No co-founder / team" /> No co-founder / team</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Unclear MVP scope" /> Unclear MVP scope</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Don't know where to start" /> Don't know where to start</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Legal / regulatory uncertainty" /> Legal / regulatory uncertainty</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Need domain expertise" /> Need domain expertise</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Distribution / audience access" /> Distribution / audience access</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Competing priorities" /> Competing priorities</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Fear of failure / perfectionism" /> Fear of failure / perfectionism</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Past failed attempts" /> Past failed attempts</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Tooling / stack overwhelm" /> Tooling / stack overwhelm</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Design / UX skills gap" /> Design / UX skills gap</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Marketing / sales skills gap" /> Marketing / sales skills gap</label>
+          <label class="checkbox"><input type="checkbox" name="barriers" value="Other" /> Other</label>
+          </div>
+          <div class="other-field" hidden>
+            <label for="barriersOther">Other (describe)</label>
+            <input type="text" id="barriersOther" maxlength="100" hidden />
+            <span class="char-count" data-count-for="barriersOther">0 / 100</span>
+          </div>
+        </fieldset>
+        <div id="tray-idea" class="tray text-tray">
+          <div class="tray-heading"><span class="tray-index">05 ·</span> Idea</div>
+          <div class="text-field">
+            <label for="idea">Describe your idea</label>
+            <textarea id="idea" name="idea" maxlength="6000" required></textarea>
+            <span class="char-count" data-count-for="idea">0 / 6000</span>
+          </div>
+        </div>
+        <div id="tray-mvp" class="tray text-tray">
+          <div class="tray-heading"><span class="tray-index">06 ·</span> MVP</div>
+          <div class="text-field">
+            <label for="mvp">Minimum viable version</label>
+            <textarea id="mvp" name="mvp" maxlength="6000" required></textarea>
+            <span class="char-count" data-count-for="mvp">0 / 6000</span>
+          </div>
+        </div>
+        <div class="form-actions">
+          <p class="submit-hint" id="submitHint">Complete all 6 sections to submit.</p>
+          <div class="form-finale" id="formFinale" hidden>
+            <p class="form-finale__eyebrow">All sections complete</p>
+            <h3 class="form-finale__title">Ready to plant your idea?</h3>
+            <p class="form-finale__lead">Everything looks good. Send it to the garden when you&rsquo;re ready.</p>
+            <button type="submit" class="btn-stamp btn-stamp--finale" id="submitBtn" disabled>
+              <span class="btn-stamp__icon" aria-hidden="true">
+                <svg class="btn-stamp__glyph" viewBox="0 0 16 16" width="16" height="16" focusable="false">
+                  <path d="M8 13.25V7.75" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                  <path d="M8 8.25C8 8.25 5.4 7.5 4.25 4.75C6.35 5.85 8 8.25 8 8.25Z" fill="currentColor"/>
+                  <path d="M8 8.25C8 8.25 10.6 7.5 11.75 4.75C9.65 5.85 8 8.25 8 8.25Z" fill="currentColor"/>
+                  <ellipse cx="8" cy="13.35" rx="0.95" ry="0.62" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="btn-stamp__label">Send to garden</span>
+            </button>
+          </div>
+          <div id="status" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <img class="footer-koi" src="/img/koi-mark.png" alt="" width="40" height="40" />
+      <div class="site-footer__inner">
+        <a href="https://gatewoodlab.com">Back to Gatewood Lab</a>
+        <span class="footer-copy">&copy; Gatewood Lab</span>
+      </div>
+    </footer>
+    <script src="/js/form.js" defer></script>
+  </body>
+</html>
