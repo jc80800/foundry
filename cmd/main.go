@@ -9,8 +9,9 @@ import (
 )
 
 type application struct {
-	logger *slog.Logger
-	tmpl   *template.Template
+	logger    *slog.Logger
+	homeTmpl  *template.Template
+	ideasTmpl *template.Template
 }
 
 func main() {
@@ -23,15 +24,16 @@ func main() {
 	})
 	logger := slog.New(loggerHandler)
 
-	tmpl, err := template.ParseFiles("ui/html/base.tmpl", "ui/html/home.tmpl")
+	homeTmpl, ideasTmpl, err := parseTemplates()
 	if err != nil {
 		logger.Error("Failed to parse templates", "error", err)
 		os.Exit(1)
 	}
 
 	app := &application{
-		logger: logger,
-		tmpl:   tmpl,
+		logger:    logger,
+		homeTmpl:  homeTmpl,
+		ideasTmpl: ideasTmpl,
 	}
 
 	mux := app.routes()
@@ -41,4 +43,31 @@ func main() {
 	err = http.ListenAndServe(*addr, mux)
 	logger.Error("Failed to start server", "error", err)
 	os.Exit(1)
+}
+
+func parseTemplates() (*template.Template, *template.Template, error) {
+	base, err := template.ParseFiles("ui/html/base.tmpl")
+	if err != nil {
+		return nil, nil, err
+	}
+
+	homeTmpl, err := base.Clone()
+	if err != nil {
+		return nil, nil, err
+	}
+	homeTmpl, err = homeTmpl.ParseFiles("ui/html/home.tmpl")
+	if err != nil {
+		return nil, nil, err
+	}
+
+	ideasTmpl, err := base.Clone()
+	if err != nil {
+		return nil, nil, err
+	}
+	ideasTmpl, err = ideasTmpl.ParseFiles("ui/html/ideas.tmpl")
+	if err != nil {
+		return nil, nil, err
+	}
+
+	return homeTmpl, ideasTmpl, nil
 }

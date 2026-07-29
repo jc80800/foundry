@@ -119,15 +119,13 @@ body {
 	padding-bottom: 2px;
 }
 
-.nav-link.is-stub {
-	opacity: 0.45;
-	cursor: default;
-	pointer-events: none;
-}
-
-.nav-link:not(.is-stub):focus-visible {
+.nav-link:focus-visible {
 	outline: 2px solid var(--color-secondary);
 	outline-offset: 3px;
+}
+
+.paper-exhibit {
+	max-width: 48rem;
 }
 
 .banner {
@@ -280,11 +278,194 @@ body {
 	color: var(--color-muted);
 }
 
+/* Ideas exhibit — print catalog */
+
+.exhibit-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	counter-reset: exhibit;
+	border-top: 1px solid var(--color-border);
+}
+
+.exhibit-entry {
+	display: grid;
+	grid-template-columns: 3.5rem 1fr;
+	gap: var(--space-4);
+	padding: var(--space-5) 0;
+	border-bottom: 1px solid var(--color-border);
+	opacity: 0;
+	transform: translateY(0.5rem);
+	animation: exhibit-enter 420ms ease forwards;
+}
+
+.exhibit-entry:nth-child(1) { animation-delay: 40ms; }
+.exhibit-entry:nth-child(2) { animation-delay: 90ms; }
+.exhibit-entry:nth-child(3) { animation-delay: 140ms; }
+.exhibit-entry:nth-child(4) { animation-delay: 190ms; }
+.exhibit-entry:nth-child(5) { animation-delay: 240ms; }
+.exhibit-entry:nth-child(6) { animation-delay: 290ms; }
+.exhibit-entry:nth-child(n+7) { animation-delay: 340ms; }
+
+@keyframes exhibit-enter {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.exhibit-index {
+	font-family: var(--font-mono);
+	font-size: clamp(1.5rem, 4vw, var(--text-2xl));
+	line-height: 1;
+	letter-spacing: -0.04em;
+	color: color-mix(in srgb, var(--color-primary) 28%, transparent);
+	padding-top: 0.15em;
+}
+
+.exhibit-index::before {
+	counter-increment: exhibit;
+	content: counter(exhibit, decimal-leading-zero);
+}
+
+.exhibit-body {
+	min-width: 0;
+}
+
+.exhibit-title {
+	margin: 0 0 var(--space-2);
+	font-family: var(--font-display);
+	font-size: var(--text-xl);
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	line-height: 1.25;
+	color: var(--color-primary);
+}
+
+.exhibit-fold {
+	margin: 0 0 var(--space-4);
+}
+
+.exhibit-fold > summary {
+	list-style: none;
+	cursor: pointer;
+}
+
+.exhibit-fold > summary::-webkit-details-marker {
+	display: none;
+}
+
+.exhibit-fold > summary::marker {
+	content: "";
+}
+
+.exhibit-description {
+	margin: 0;
+	font-size: var(--text-md);
+	font-weight: 300;
+	line-height: 1.6;
+	color: var(--color-muted);
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.exhibit-fold[open] > summary .exhibit-description {
+	display: block;
+	-webkit-line-clamp: unset;
+	overflow: visible;
+}
+
+.exhibit-fold > summary::after {
+	display: inline-block;
+	margin-top: var(--space-2);
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--color-primary);
+	content: "Expand";
+}
+
+.exhibit-fold[open] > summary::after {
+	content: "Collapse";
+}
+
+.exhibit-fold > summary:focus-visible {
+	outline: 2px solid var(--color-secondary);
+	outline-offset: 3px;
+	border-radius: var(--radius-sm);
+}
+
+.exhibit-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	column-gap: var(--space-4);
+	row-gap: var(--space-2);
+	font-size: var(--text-sm);
+}
+
+.exhibit-category {
+	font-family: var(--font-mono);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--color-primary);
+}
+
+.exhibit-tags,
+.exhibit-contact {
+	position: relative;
+	padding-left: var(--space-4);
+	color: var(--color-muted);
+}
+
+.exhibit-tags::before,
+.exhibit-contact::before {
+	content: "·";
+	position: absolute;
+	left: 0;
+	color: #d1d5db;
+}
+
+.exhibit-empty {
+	margin: 0;
+	padding: var(--space-5) 0;
+	border-top: 1px solid var(--color-border);
+	font-weight: 300;
+	color: var(--color-muted);
+}
+
+.exhibit-empty a {
+	color: var(--color-primary);
+	text-underline-offset: 3px;
+}
+
+.exhibit-empty a:focus-visible {
+	outline: 2px solid var(--color-secondary);
+	outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+	.exhibit-entry {
+		grid-template-columns: 2.5rem 1fr;
+		gap: var(--space-3);
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.field input,
 	.field textarea,
 	.field select,
 	.btn-primary {
 		transition: none;
+	}
+
+	.exhibit-entry {
+		opacity: 1;
+		transform: none;
+		animation: none;
 	}
 }

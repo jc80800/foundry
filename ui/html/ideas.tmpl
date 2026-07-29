@@ -1,0 +1,47 @@
+{{define "title"}}Ideas · Foundry{{end}}
+
+{{define "main"}}
+<section class="hero">
+	<h1 class="hero-brand">Ideas</h1>
+	<p class="hero-lede">What people have been forging.</p>
+</section>
+
+<section class="exhibit" aria-labelledby="exhibit-heading">
+	<h2 id="exhibit-heading" class="section-label">
+		Exhibit · {{len .Ideas}}
+	</h2>
+
+	{{if .Ideas}}
+	<ol class="exhibit-list">
+		{{range .Ideas}}
+		<li class="exhibit-entry">
+			<span class="exhibit-index" aria-hidden="true"></span>
+			<div class="exhibit-body">
+				<h3 class="exhibit-title">{{.Title}}</h3>
+				<details class="exhibit-fold">
+					<summary>
+						<span class="exhibit-description">{{.Description}}</span>
+					</summary>
+				</details>
+				<div class="exhibit-meta">
+					<span class="exhibit-category">{{.Category}}</span>
+					{{if .Tags}}
+					<span class="exhibit-tags">{{.Tags}}</span>
+					{{end}}
+					{{if .Contact}}
+					<span class="exhibit-contact">{{.Contact}}</span>
+					{{end}}
+				</div>
+			</div>
+		</li>
+		{{end}}
+	</ol>
+	{{else}}
+	<p class="exhibit-empty">
+		Nothing on the wall yet.
+		<a href="/">Submit an idea</a>
+		to start the exhibit.
+	</p>
+	{{end}}
+</section>
+{{end}}

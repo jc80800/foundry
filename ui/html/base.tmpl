@@ -11,12 +11,12 @@
 	<link rel="stylesheet" href="/static/css/site.css">
 </head>
 <body>
-	<div class="paper">
+	<div class="paper{{if eq .ActiveNav "ideas"}} paper-exhibit{{end}}">
 		<header class="site-header">
 			<a class="brand" href="/">Foundry</a>
 			<nav class="site-nav" aria-label="Primary">
-				<a class="nav-link is-active" href="/">Submit</a>
-				<a class="nav-link is-stub" href="#" aria-disabled="true" tabindex="-1">Ideas</a>
+				<a class="nav-link{{if eq .ActiveNav "submit"}} is-active{{end}}" href="/">Submit</a>
+				<a class="nav-link{{if eq .ActiveNav "ideas"}} is-active{{end}}" href="/ideas">Ideas</a>
 			</nav>
 		</header>
 
