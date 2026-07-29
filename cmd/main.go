@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"html/template"
 	"log/slog"
 	"net/http"
 	"os"
@@ -9,6 +10,7 @@ import (
 
 type application struct {
 	logger *slog.Logger
+	tmpl   *template.Template
 }
 
 func main() {
@@ -21,15 +23,22 @@ func main() {
 	})
 	logger := slog.New(loggerHandler)
 
+	tmpl, err := template.ParseFiles("ui/html/base.tmpl", "ui/html/home.tmpl")
+	if err != nil {
+		logger.Error("Failed to parse templates", "error", err)
+		os.Exit(1)
+	}
+
 	app := &application{
 		logger: logger,
+		tmpl:   tmpl,
 	}
 
 	mux := app.routes()
 
 	logger.Info("Starting server", "addr", *addr)
 
-	err := http.ListenAndServe(*addr, mux)
+	err = http.ListenAndServe(*addr, mux)
 	logger.Error("Failed to start server", "error", err)
 	os.Exit(1)
 }

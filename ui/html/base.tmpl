@@ -1,0 +1,33 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{template "title" .}}</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=PT+Mono&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/static/css/site.css">
+</head>
+<body>
+	<div class="paper">
+		<header class="site-header">
+			<a class="brand" href="/">Foundry</a>
+			<nav class="site-nav" aria-label="Primary">
+				<a class="nav-link is-active" href="/">Submit</a>
+				<a class="nav-link is-stub" href="#" aria-disabled="true" tabindex="-1">Ideas</a>
+			</nav>
+		</header>
+
+		<main>
+			{{template "main" .}}
+		</main>
+
+		<footer class="site-footer">
+			<p>&copy; Foundry</p>
+		</footer>
+	</div>
+</body>
+</html>
+{{end}}

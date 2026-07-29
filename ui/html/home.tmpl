@@ -1,0 +1,52 @@
+{{define "title"}}Foundry{{end}}
+
+{{define "main"}}
+{{if .Submitted}}
+<p class="banner banner-success" role="status">Idea received. Persistence comes next.</p>
+{{end}}
+
+<section class="hero">
+	<h1 class="hero-brand">Foundry</h1>
+	<p class="hero-lede">Capture project ideas before they slip away.</p>
+</section>
+
+<section class="idea-form-section" aria-labelledby="idea-form-heading">
+	<h2 id="idea-form-heading" class="section-label">New idea</h2>
+
+	<form class="idea-form" method="POST" action="/api/ideas">
+		<div class="field">
+			<label for="title">Title</label>
+			<input type="text" id="title" name="title" required maxlength="200" autocomplete="off">
+		</div>
+
+		<div class="field">
+			<label for="description">Description</label>
+			<textarea id="description" name="description" required rows="5" maxlength="4000"></textarea>
+		</div>
+
+		<div class="field">
+			<label for="category">Category</label>
+			<select id="category" name="category" required>
+				<option value="" disabled selected>Select a category</option>
+				<option value="Product">Product</option>
+				<option value="Tool">Tool</option>
+				<option value="Research">Research</option>
+				<option value="Experiment">Experiment</option>
+				<option value="Other">Other</option>
+			</select>
+		</div>
+
+		<div class="field">
+			<label for="tags">Tags <span class="optional">(optional)</span></label>
+			<input type="text" id="tags" name="tags" maxlength="200" placeholder="comma-separated" autocomplete="off">
+		</div>
+
+		<div class="field">
+			<label for="contact">Contact <span class="optional">(optional)</span></label>
+			<input type="text" id="contact" name="contact" maxlength="200" placeholder="name or email" autocomplete="email">
+		</div>
+
+		<button type="submit" class="btn-primary">Submit idea</button>
+	</form>
+</section>
+{{end}}
