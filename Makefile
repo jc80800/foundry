@@ -1,7 +1,7 @@
 .PHONY: run build
 
 run:
-	go run ./cmd/server
+	go run ./cmd
 
 build:
-	go build -o bin/server ./cmd/server
+	go build -o bin/foundry ./cmd

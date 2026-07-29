@@ -1,14 +1,19 @@
-# Bootstrap Template
+# Foundry
 
-Minimal Go server with an embedded HTML frontend.
+Minimal Go project scaffold.
 
 ```
+<<<<<<< Updated upstream
 cmd/server/     entry point
 internal/
   config/       environment config
   handler/      HTTP handlers
   server/       routing
 web/            embedded HTML
+=======
+cmd/        entry point
+internal/   private packages
+>>>>>>> Stashed changes
 ```
 
 ## Run
@@ -17,6 +22,7 @@ web/            embedded HTML
 make run
 ```
 
+<<<<<<< Updated upstream
 Open [http://localhost:8080](http://localhost:8080).
 
 Health check: `GET /api/health` → `{"status":"ok"}`
@@ -30,3 +36,10 @@ Health check: `GET /api/health` → `{"status":"ok"}`
 - Brand assets: `web/img/` (koi mark, koi accent, calligraphy watermark)
 
 Set `PORT` to change the listen port.
+=======
+## Build
+
+```bash
+make build
+```
+>>>>>>> Stashed changes
